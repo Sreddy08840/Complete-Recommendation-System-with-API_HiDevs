@@ -12,4 +12,10 @@ __pycache__/
 *.swp
 *.swo
 *~
+.coverage
+*.png
+evaluation_report.md
+data/*.db
+data/*.sqlite
+data/*.sqlite3
 
