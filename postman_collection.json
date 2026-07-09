@@ -1,0 +1,262 @@
+
+{
+  "info": {
+    "name": "Complete Recommendation System API",
+    "description": "Postman collection for the Complete Recommendation System API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["health"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Recommendations",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/recommend/1?limit=5",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["recommend", "1"],
+          "query": [
+            {
+              "key": "limit",
+              "value": "5",
+              "description": "Number of recommendations to return"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Record Feedback",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"user_id\": 1,\n  \"content_id\": 1,\n  \"rating\": 5,\n  \"interaction_type\": \"like\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/feedback",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["feedback"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Metrics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/metrics",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["metrics"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/users/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["users", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"newuser\",\n  \"email\": \"newuser@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/users/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["users", ""]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Content",
+      "item": [
+        {
+          "name": "Get All Content",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/content/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["content", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Content",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"New Content Item\",\n  \"description\": \"This is a new content item description\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/content/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["content", ""]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Skills",
+      "item": [
+        {
+          "name": "Get All Skills",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/skills/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["skills", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Skill",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Skill\",\n  \"description\": \"Description of the new skill\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/skills/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["skills", ""]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Interactions",
+      "item": [
+        {
+          "name": "Get All Interactions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/interactions/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["interactions", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Interaction",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": 1,\n  \"content_id\": 1,\n  \"rating\": 5,\n  \"interaction_type\": \"view\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/interactions/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["interactions", ""]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
